@@ -12,6 +12,10 @@ interface EmailData{
 interface SignUpEmailDataTemp{
     name: string
 }
+interface BirthdayEmailDataTemp{
+    name: String, 
+    date: Date
+}
 
 // config data interface
 
@@ -20,8 +24,16 @@ interface SignUpEmailData{
     name: string
 }
 
+interface BirthdayEmailData{
+    email: string, 
+    name: string, 
+    date: Date
+}
+
 export{
     EmailData, 
     SignUpEmailDataTemp, 
-    SignUpEmailData
+    SignUpEmailData, 
+    BirthdayEmailDataTemp, 
+    BirthdayEmailData
 }

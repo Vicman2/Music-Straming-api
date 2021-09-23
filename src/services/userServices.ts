@@ -163,6 +163,28 @@ class UserServices{
 
     }   
 
+    // Fetch user birthday
+
+    async AllUserBirthday(){
+    
+
+        const  allUsers = await UserModel
+            .find()
+
+        const usersWithTodayAsBirthday = allUsers.filter(user => {
+            const today = new Date(); 
+
+            let userDateOfBirth = new Date(user.date_of_birth);
+            // Check if the user month and date matches. 
+            if(today.getDate() === userDateOfBirth.getDate() 
+                && today.getMonth() === userDateOfBirth.getMonth()
+            ) 
+                return user
+        })
+
+        return usersWithTodayAsBirthday
+    }
+
 }
 
 export default new UserServices()

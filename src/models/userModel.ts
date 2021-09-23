@@ -17,7 +17,11 @@ const UserSchema  = new Schema<AUser>({
     lastname: {
         type: String, 
         required: true
-    }, 
+    },
+    date_of_birth: {
+        type: Date, 
+        required: true
+    },  
     password: {
         type: String, 
         required: true
